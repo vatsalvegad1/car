@@ -76,6 +76,8 @@ function draw() {
 
   rider.bounce(r);
   rider.bounce(l);
+  l.bounce(rider);
+  r.bounce(rider);
 
 
 car1.lifetime = -0.1;
