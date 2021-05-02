@@ -17,7 +17,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(400,400);
+  createCanvas(400 ,400);
   
   
 w1 = createSprite(125, 340, 10, 80);
@@ -75,10 +75,9 @@ function draw() {
   l.shapeColor="white";
 
   rider.bounce(r);
+  r.bounce(rider);
   rider.bounce(l);
   l.bounce(rider);
-  r.bounce(rider);
-
 
 car1.lifetime = -0.1;
  car2.lifetime = -0.1;
@@ -90,6 +89,9 @@ car1.lifetime = -0.1;
  w4.lifetime = -0.1;
  w5.lifetime = -0.1;
  w6.lifetime = -0.1;
+
+
+
  if(gameState==="play"){
  collideCars();
  showScore();
@@ -110,62 +112,10 @@ car1.lifetime = -0.1;
  car2.x = Math.round(random(0,400));
  car4.x = Math.round(random(0,400));
  car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
- car1.x = Math.round(random(0,400));
- car2.x = Math.round(random(0,400));
- car4.x = Math.round(random(0,400));
- car3.x = Math.round(random(0,400));
+ car1.x = Math.round(random(0,Math.round(random(0,400))));
+ car2.x = Math.round(random(0,Math.round(random(0,400))));
+ car4.x = Math.round(random(0,Math.round(random(0,400))));
+ car3.x = Math.round(random(0,Math.round(random(0,400))));
 
  }
  }
@@ -254,13 +204,12 @@ function showScore(){
  text(score, 20,80);
 }
 function movePlayer(){
- if(keyDown(RIGHT_ARROW)){
- rider.x = rider.x + 7;
- }
-
- if(keyDown(LEFT_ARROW)){
- rider.x = rider.x - 7;
- }
+  if(keyDown(RIGHT_ARROW)){
+    rider.x = rider.x + 5;
+    }
+    if(keyDown(LEFT_ARROW)){
+    rider.x = rider.x - 5;
+   }
  car1.velocityY = score/50;
  car2.velocityY = score/50;
  car3.velocityY = score/50;
@@ -416,11 +365,11 @@ edges= createEdgeSprites();
  car1.velocityY=0;car2.velocityY=0;car3.velocityY=0;car4.velocityY=0;
 
 w1.velocityY=0;w2.velocityY=0;w3.velocityY=0;w4.velocityY=0;w5.velocityY=0;w6.velocityY=0;
- if(keyDown(RIGHT_ARROW)){
- rider.x = rider.x - 5;
- }
- if(keyDown(LEFT_ARROW)){
- rider.x = rider.x + 5;
+if(keyDown(RIGHT_ARROW)){
+  rider.x = rider.x - 5;
+  }
+  if(keyDown(LEFT_ARROW)){
+  rider.x = rider.x + 5;
  }
  rider.changeAnimation("collided",rider_3Img);
  gameState = "over";
