@@ -75,6 +75,8 @@ function draw() {
   l.shapeColor="white";
 
   rider.bounce(r);
+  rider.bounce(l);
+
 
 car1.lifetime = -0.1;
  car2.lifetime = -0.1;
